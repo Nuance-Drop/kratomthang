@@ -1,0 +1,67 @@
+:root {
+    --neon-green: #39ff14;
+    --electric-gold: #ffd700;
+    --holo-pink: #ff00ff;
+    --holo-cyan: #00ffff;
+    --deep-purple: #1a0033;
+    --void: #0a0014;
+    --hot-pink: #ff0066;
+    --lime: #ccff00;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0a0014 0%, #1a0033 50%, #0d0021 100%);
+    color: white;
+    line-height: 1.6;
+}
+
+/* Copy all the CSS from my previous HTML here */
+/* Include: nav, hero, buttons, pricing cards, strain grids, forms, footer */
+
+/* Additional styles for education page */
+.content {
+    max-width: 900px;
+    margin: 100px auto 4rem;
+    padding: 2rem;
+}
+
+.edu-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--electric-gold);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.edu-card h2 {
+    color: var(--electric-gold);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.edu-card h3 {
+    color: var(--neon-green);
+    margin: 1.5rem 0 0.5rem;
+}
+
+.edu-card ul {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.edu-card li {
+    margin-bottom: 0.5rem;
+}
+
+.warning {
+    border-color: var(--hot-pink);
+    background: rgba(255,0,102,0.05);
+}
+
+.warning h2 {
+    color: var(--hot-pink);
+}
