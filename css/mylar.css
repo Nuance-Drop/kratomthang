@@ -310,7 +310,6 @@ body {
     0 0 40px rgba(131,56,236,0.3);
 }
 
-/* Color coding by vein */
 .mylar-card.green { border-color: rgba(6,255,165,0.3); }
 .mylar-card.green:hover { box-shadow: 0 0 40px rgba(6,255,165,0.3); border-color: rgba(6,255,165,0.6); }
 
@@ -460,7 +459,7 @@ body {
 }
 
 /* ====================
-   CATALOG PAGE (strains.html)
+   CATALOG PAGE (strains.html) - FIXED PRICE SIZE
    ==================== */
 
 .catalog-hero {
@@ -509,6 +508,7 @@ body {
   margin-bottom: 3rem;
 }
 
+/* FIXED: Smaller prices, better layout */
 .compact-card {
   display: flex;
   justify-content: space-between;
@@ -533,9 +533,10 @@ body {
   z-index: 2;
 }
 
+/* FIXED: Price is now small and readable */
 .compact-card .price {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.9rem; /* FIXED: Was too big */
+  font-size: 0.9rem;
   font-weight: 700;
   color: #ffbe0b;
   z-index: 2;
@@ -544,12 +545,10 @@ body {
   border-radius: 4px;
 }
 
-/* Enhanced hover effects */
 .compact-card:hover {
   transform: translateY(-3px);
   border-color: rgba(255,255,255,0.3);
   background: rgba(255,255,255,0.1);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 .compact-card.green:hover { border-color: #06ffa5; box-shadow: 0 5px 20px rgba(6,255,165,0.2); }
@@ -562,7 +561,6 @@ body {
 .compact-card.white .price { color: #3a86ff; }
 
 .compact-card.gold:hover { border-color: #ffbe0b; box-shadow: 0 5px 20px rgba(255,190,11,0.2); }
-}
 
 /* ====================
    STRAIN DETAIL PAGE
