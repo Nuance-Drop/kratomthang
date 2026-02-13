@@ -1,0 +1,20 @@
+title: THANG
+description: Premium Botanicals & Kratom | Dallas
+baseurl: ""
+url: "https://kratomthang.com"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  strains:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "strains"
+    values:
+      layout: "strain"
