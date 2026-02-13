@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Full Catalog | THANG</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/mylar.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | THANG Botanicals</title>
+  <meta name="description" content="{{ page.title }} - {{ page.category }} vein kratom from {{ page.origin }}. Premium wholesale kratom in Dallas, TX. Lab-tested, customs-cleared.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/mylar.css">
 </head>
 <body>
-  <div class="holo-bg"></div>
-  
+  <div class="chrome-bg"></div>
+  <div class="noise"></div>
+
   <nav class="mylar-nav">
     <div class="nav-container">
       <a href="/" class="chrome-logo">THANG</a>
@@ -19,297 +26,91 @@
     </div>
   </nav>
 
-  <section class="catalog-hero">
-    <h1 class="chrome-text huge">STRAIN CATALOG</h1>
-    <p class="sub-text">50+ PREMIUM VARIETIES • DIRECT TRADE</p>
+  <section class="strain-hero" style="padding-top: 120px;">
+    <div class="strain-mylar-bag-large">
+      <div class="holo-sheen"></div>
+      <div class="bag-content">
+        <span class="vein-badge {{ page.category | downcase }}">{{ page.category }} VEIN</span>
+        <h1 class="chrome-text massive">{{ page.title }}</h1>
+        <p class="origin-tag">{{ page.origin }}</p>
+        
+        <div class="strain-specs">
+          <div class="spec">
+            <span class="label">Alkaloid Content</span>
+            <span class="value">1.8-2.1%</span>
+          </div>
+          <div class="spec">
+            <span class="label">Harvest</span>
+            <span class="value">Mature Leaves</span>
+          </div>
+          <div class="spec">
+            <span class="label">Processing</span>
+            <span class="value">Indoor Dried</span>
+          </div>
+        </div>
+
+        <div class="price-matrix">
+          <div class="price-row">
+            <span>Retail 1kg</span>
+            <span class="price">$240</span>
+          </div>
+          <div class="price-row wholesale">
+            <span>Wholesale 1kg</span>
+            <span class="price">$125</span>
+          </div>
+        </div>
+
+        <a href="/order.html?strain={{ page.title | url_encode }}" class="mylar-btn primary large">ORDER {{ page.title | upcase }}</a>
+      </div>
+      <div class="holo-reflection"></div>
+    </div>
   </section>
 
-  <section class="strain-list">
-    <!-- GREEN VEINS -->
-    <div class="category-header">
-      <span class="chrome-text">GREEN VEIN</span>
-      <div class="rainbow-line"></div>
-    </div>
-    
-    <div class="compact-grid">
-      <a href="/green-maeng-da/" class="compact-card">
-        <span class="name">Maeng Da</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/super-green/" class="compact-card">
-        <span class="name">Super Green</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/green-horn/" class="compact-card">
-        <span class="name">Horn</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/green-bali/" class="compact-card">
-        <span class="name">Bali</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/green-borneo/" class="compact-card">
-        <span class="name">Borneo</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/green-thai/" class="compact-card">
-        <span class="name">Thai</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/green-malay/" class="compact-card">
-        <span class="name">Malay</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/green-elephant/" class="compact-card">
-        <span class="name">Elephant</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/green-dragon/" class="compact-card">
-        <span class="name">Dragon</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/green-pucuk/" class="compact-card">
-        <span class="name">Pucuk</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/green-ketapang/" class="compact-card">
-        <span class="name">Ketapang</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/green-sumatra/" class="compact-card">
-        <span class="name">Sumatra</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/green-hulu-kapuas/" class="compact-card">
-        <span class="name">Hulu Kapuas</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/green-stem-vein/" class="compact-card">
-        <span class="name">Stem & Vein</span>
-        <span class="price">$110</span>
-      </a>
-    </div>
-
-    <!-- RED VEINS -->
-    <div class="category-header">
-      <span class="chrome-text red">RED VEIN</span>
-      <div class="rainbow-line red"></div>
-    </div>
-    
-    <div class="compact-grid">
-      <a href="/red-bali/" class="compact-card red">
-        <span class="name">Bali</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/red-horn/" class="compact-card red">
-        <span class="name">Horn</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/red-thai/" class="compact-card red">
-        <span class="name">Thai</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/red-borneo/" class="compact-card red">
-        <span class="name">Borneo</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/red-maeng-da/" class="compact-card red">
-        <span class="name">Maeng Da</span>
-        <span class="price">$135</span>
-      </a>
-      <a href="/red-bentuangie/" class="compact-card red">
-        <span class="name">Bentuangie</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/red-dragon/" class="compact-card red">
-        <span class="name">Dragon</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/red-elephant/" class="compact-card red">
-        <span class="name">Elephant</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/red-vietnam/" class="compact-card red">
-        <span class="name">Vietnam</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/red-sumatra/" class="compact-card red">
-        <span class="name">Sumatra</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/red-hulu-kapuas/" class="compact-card red">
-        <span class="name">Hulu Kapuas</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/red-malay/" class="compact-card red">
-        <span class="name">Malay</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/red-pucuk/" class="compact-card red">
-        <span class="name">Pucuk</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/red-ketapang/" class="compact-card red">
-        <span class="name">Ketapang</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/red-stem-vein/" class="compact-card red">
-        <span class="name">Stem & Vein</span>
-        <span class="price">$110</span>
-      </a>
-    </div>
-
-    <!-- WHITE VEINS -->
-    <div class="category-header">
-      <span class="chrome-text white">WHITE VEIN</span>
-      <div class="rainbow-line white"></div>
-    </div>
-    
-    <div class="compact-grid">
-      <a href="/white-borneo/" class="compact-card white">
-        <span class="name">Borneo</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/white-horn/" class="compact-card white">
-        <span class="name">Horn</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/white-thai/" class="compact-card white">
-        <span class="name">Thai</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/white-bali/" class="compact-card white">
-        <span class="name">Bali</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/white-maeng-da/" class="compact-card white">
-        <span class="name">Maeng Da</span>
-        <span class="price">$135</span>
-      </a>
-      <a href="/white-elephant/" class="compact-card white">
-        <span class="name">Elephant</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/white-vietnam/" class="compact-card white">
-        <span class="name">Vietnam</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/white-sumatra/" class="compact-card white">
-        <span class="name">Sumatra</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/white-hulu-kapuas/" class="compact-card white">
-        <span class="name">Hulu Kapuas</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/white-malay/" class="compact-card white">
-        <span class="name">Malay</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/white-pucuk/" class="compact-card white">
-        <span class="name">Pucuk</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/white-ketapang/" class="compact-card white">
-        <span class="name">Ketapang</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/white-stem-vein/" class="compact-card white">
-        <span class="name">Stem & Vein</span>
-        <span class="price">$110</span>
-      </a>
-    </div>
-
-    <!-- GOLD/YELLOW -->
-    <div class="category-header">
-      <span class="chrome-text gold">GOLD & YELLOW</span>
-      <div class="rainbow-line gold"></div>
-    </div>
-    
-    <div class="compact-grid">
-      <a href="/gold-thai/" class="compact-card gold">
-        <span class="name">Thai Reserve</span>
-        <span class="price">$140</span>
-      </a>
-      <a href="/gold-borneo/" class="compact-card gold">
-        <span class="name">Borneo</span>
-        <span class="price">$135</span>
-      </a>
-      <a href="/gold-elephant/" class="compact-card gold">
-        <span class="name">Elephant</span>
-        <span class="price">$140</span>
-      </a>
-      <a href="/yellow-bali/" class="compact-card gold">
-        <span class="name">Yellow Bali</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/yellow-borneo/" class="compact-card gold">
-        <span class="name">Yellow Borneo</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/yellow-vietnam/" class="compact-card gold">
-        <span class="name">Yellow Vietnam</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/yellow-sumatra/" class="compact-card gold">
-        <span class="name">Yellow Sumatra</span>
-        <span class="price">$125</span>
-      </a>
-      <a href="/yellow-hulu-kapuas/" class="compact-card gold">
-        <span class="name">Yellow Hulu</span>
-        <span class="price">$130</span>
-      </a>
-      <a href="/yellow-stem-vein/" class="compact-card gold">
-        <span class="name">Yellow Stem</span>
-        <span class="price">$110</span>
-      </a>
-    </div>
-
-    <!-- SPECIALTY -->
-    <div class="category-header">
-      <span class="chrome-text special">SPECIALTY & RARE</span>
-      <div class="rainbow-line special"></div>
-    </div>
-    
-    <div class="compact-grid">
-      <a href="/aceh-green/" class="compact-card special">
-        <span class="name">Aceh Green</span>
-        <span class="price">$140</span>
-      </a>
-      <a href="/aceh-red/" class="compact-card special">
-        <span class="name">Aceh Red</span>
-        <span class="price">$140</span>
-      </a>
-      <a href="/aceh-white/" class="compact-card special">
-        <span class="name">Aceh White</span>
-        <span class="price">$140</span>
-      </a>
-      <a href="/aceh-yellow/" class="compact-card special">
-        <span class="name">Aceh Yellow</span>
-        <span class="price">$140</span>
-      </a>
-      <a href="/zombie-green/" class="compact-card special">
-        <span class="name">Zombie Green</span>
-        <span class="price">$150</span>
-      </a>
-      <a href="/zombie-red/" class="compact-card special">
-        <span class="name">Zombie Red</span>
-        <span class="price">$150</span>
-      </a>
-      <a href="/zombie-white/" class="compact-card special">
-        <span class="name">Zombie White</span>
-        <span class="price">$150</span>
-      </a>
-      <a href="/zombie-yellow/" class="compact-card special">
-        <span class="name">Zombie Yellow</span>
-        <span class="price">$150</span>
-      </a>
+  <section class="strain-details">
+    <div class="detail-grid">
+      <div class="detail-card">
+        <h3>Origin</h3>
+        <p>Sourced directly from family farms in {{ page.origin }}. Harvested from mature trees in mineral-rich volcanic soil.</p>
+      </div>
+      <div class="detail-card">
+        <h3>Processing</h3>
+        <p>Traditional indoor drying techniques preserve alkaloid content. No additives, no fillers, 100% pure leaf.</p>
+      </div>
+      <div class="detail-card">
+        <h3>Lab Testing</h3>
+        <p>Every batch tested for contaminants, heavy metals, and alkaloid profile. Certificates available upon request.</p>
+      </div>
     </div>
   </section>
 
   <footer class="chrome-footer">
-    <a href="/order.html" class="mylar-btn primary large">PLACE ORDER</a>
-    <p style="margin-top: 2rem; opacity: 0.6;">50+ STRAINS • WHOLESALE • RETAIL • DALLAS</p>
+    <p class="chrome-text small">THANG BOTANICALS</p>
+    <p>GARLAND, TX • ORDERS@KRATOMTHANG.COM</p>
+    <p class="disclaimer">21+ ONLY • RESEARCH PURPOSES • NOT FOR HUMAN CONSUMPTION</p>
   </footer>
+
+  <!-- Age Gate -->
+  <script>
+    if (!localStorage.getItem('ageVerified')) {
+      document.body.innerHTML = `
+        <div id="age-gate" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#050505;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:Orbitron,sans-serif;">
+          <h1 style="font-size:3rem;background:linear-gradient(135deg,#ff006e,#8338ec);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem;">THANG</h1>
+          <h2 style="color:#fff;font-size:1.5rem;margin-bottom:1rem;">Age Verification Required</h2>
+          <p style="color:#888;margin-bottom:2rem;font-family:Rajdhani,sans-serif;">You must be 21+ to enter. Kratom is sold for research purposes only.</p>
+          <div>
+            <button onclick="verifyAge(true)" style="background:linear-gradient(135deg,#ff006e,#8338ec);color:#fff;border:none;padding:1rem 2rem;margin:0 0.5rem;cursor:pointer;font-family:Orbitron;font-weight:700;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);">I am 21+</button>
+            <button onclick="window.location.href='https://google.com'" style="background:transparent;color:#fff;border:1px solid #fff;padding:1rem 2rem;margin:0 0.5rem;cursor:pointer;font-family:Orbitron;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);">Exit</button>
+          </div>
+          <p style="color:#444;margin-top:2rem;font-size:0.8rem;">FDA Disclaimer: Not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
+      ` + document.body.innerHTML;
+    }
+    function verifyAge(ofAge) {
+      if (ofAge) {
+        localStorage.setItem('ageVerified', 'true');
+        document.getElementById('age-gate').style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
