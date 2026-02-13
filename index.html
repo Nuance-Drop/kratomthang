@@ -4,56 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THANG | Premium Botanicals & Kratom Wholesale Dallas</title>
-  <meta name="description" content="Premium kratom wholesaler in Dallas/Garland, TX. 50+ strains, same-day DFW delivery, bulk pricing from $8/oz. Lab-tested, customs-cleared imports.">
-  <meta name="keywords" content="kratom wholesale dallas, kratom bulk texas, kratom supplier DFW, buy kratom garland, kratom same day delivery">
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="business.business">
-  <meta property="og:title" content="THANG Botanicals - Premium Kratom Wholesale Dallas">
-  <meta property="og:description" content="Wholesale kratom supplier in Dallas. 50+ strains, same-day delivery, bulk pricing.">
-  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="css/mylar.css">
-  
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WholesaleStore",
-    "name": "Thang Botanicals",
-    "description": "Premium kratom wholesaler in Dallas-Fort Worth",
-    "url": "https://kratomthang.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Garland",
-      "addressRegion": "TX",
-      "addressCountry": "US"
-    },
-    "paymentAccepted": "Cash, Cash App, Venmo, Zelle, Crypto",
-    "priceRange": "$$"
-  }
-  </script>
+  <link rel="stylesheet" href="/css/mylar.css">
 </head>
 <body>
   <div class="chrome-bg"></div>
   <div class="noise"></div>
-  <div class="holo-bg"></div>
 
   <nav class="mylar-nav">
     <div class="nav-container">
       <a href="/" class="chrome-logo">THANG</a>
       <ul class="nav-links">
         <li><a href="/strains.html">CATALOG</a></li>
-        <li><a href="/#featured">FEATURED</a></li>
         <li><a href="/order.html">ORDER</a></li>
       </ul>
     </div>
   </nav>
 
-  <section class="chrome-hero">
+  <section class="chrome-hero" style="padding-top: 100px;">
     <div class="holo-text-container">
       <h1 class="chrome-text">THANG</h1>
       <div class="rainbow-bar"></div>
@@ -66,26 +35,58 @@
     </div>
   </section>
 
-  <!-- Dynamic Strain Grid - Links to all 50 strains -->
+  <!-- Featured Strains - Hardcoded for now to avoid Jekyll issues -->
   <section id="featured" class="featured-section">
     <h2 class="section-title chrome-text">FEATURED STRAINS</h2>
     
     <div class="mylar-grid">
-      {% raw %}{% for strain in site.strains limit:8 %}{% endraw %}
-      <a href="{% raw %}{{ strain.url }}{% endraw %}" class="mylar-card {% raw %}{{ strain.category | downcase }}{% endraw %}">
+      <a href="/strains/green-maeng-da/" class="mylar-card green">
         <div class="holo-sheen"></div>
         <div class="card-content">
-          <span class="strain-badge">{% raw %}{{ strain.category | upcase }}{% endraw %} VEIN</span>
-          <h3>{% raw %}{{ strain.title | upcase }}{% endraw %}</h3>
-          <p class="origin">{% raw %}{{ strain.origin | upcase }}{% endraw %}</p>
+          <span class="strain-badge">GREEN VEIN</span>
+          <h3>MAENG DA</h3>
+          <p class="origin">THAILAND</p>
           <div class="price-tag">
-            <span class="retail">$240</span>
             <span class="wholesale">$125/kg</span>
           </div>
         </div>
-        <div class="holo-reflection"></div>
       </a>
-      {% raw %}{% endfor %}{% endraw %}
+
+      <a href="/strains/red-bali/" class="mylar-card red">
+        <div class="holo-sheen"></div>
+        <div class="card-content">
+          <span class="strain-badge">RED VEIN</span>
+          <h3>BALI</h3>
+          <p class="origin">INDONESIA</p>
+          <div class="price-tag">
+            <span class="wholesale">$125/kg</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/strains/white-borneo/" class="mylar-card white">
+        <div class="holo-sheen"></div>
+        <div class="card-content">
+          <span class="strain-badge">WHITE VEIN</span>
+          <h3>BORNEO</h3>
+          <p class="origin">BORNEO</p>
+          <div class="price-tag">
+            <span class="wholesale">$125/kg</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/strains/gold-thai/" class="mylar-card gold">
+        <div class="holo-sheen"></div>
+        <div class="card-content">
+          <span class="strain-badge">GOLD VEIN</span>
+          <h3>THAI RESERVE</h3>
+          <p class="origin">THAILAND</p>
+          <div class="price-tag">
+            <span class="wholesale">$140/kg</span>
+          </div>
+        </div>
+      </a>
     </div>
 
     <div class="view-all">
@@ -115,11 +116,10 @@
 
   <footer class="chrome-footer">
     <p class="chrome-text small">THANG BOTANICALS</p>
-    <p>GARLAND, TX • <a href="mailto:orders@kratomthang.com" style="color:inherit;">ORDERS@KRATOMTHANG.COM</a></p>
-    <p class="disclaimer">21+ ONLY • RESEARCH PURPOSES • NOT FOR HUMAN CONSUMPTION</p>
+    <p>GARLAND, TX • ORDERS@KRATOMTHANG.COM</p>
+    <p class="disclaimer">21+ ONLY • RESEARCH PURPOSES</p>
   </footer>
 
-  <!-- Age Gate -->
   <script>
     if (!localStorage.getItem('ageVerified')) {
       document.body.innerHTML = `
@@ -128,17 +128,11 @@
           <h2 style="color:#fff;font-size:1.5rem;margin-bottom:1rem;">Age Verification Required</h2>
           <p style="color:#888;margin-bottom:2rem;font-family:Rajdhani,sans-serif;">You must be 21+ to enter. Not for human consumption.</p>
           <div>
-            <button onclick="verifyAge(true)" style="background:linear-gradient(135deg,#ff006e,#8338ec);color:#fff;border:none;padding:1rem 2rem;margin:0 0.5rem;cursor:pointer;font-family:Orbitron;font-weight:700;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);">I am 21+</button>
+            <button onclick="localStorage.setItem('ageVerified','true');location.reload()" style="background:linear-gradient(135deg,#ff006e,#8338ec);color:#fff;border:none;padding:1rem 2rem;margin:0 0.5rem;cursor:pointer;font-family:Orbitron;font-weight:700;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);">I am 21+</button>
             <button onclick="window.location.href='https://google.com'" style="background:transparent;color:#fff;border:1px solid #fff;padding:1rem 2rem;margin:0 0.5rem;cursor:pointer;font-family:Orbitron;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);">Exit</button>
           </div>
         </div>
       ` + document.body.innerHTML;
-    }
-    function verifyAge(ofAge) {
-      if (ofAge) {
-        localStorage.setItem('ageVerified', 'true');
-        document.getElementById('age-gate').style.display = 'none';
-      }
     }
   </script>
 </body>
