@@ -10,7 +10,7 @@ plugins:
 collections:
   strains:
     output: true
-    permalink: /:name/
+    permalink: /strains/:name/
 
 defaults:
   - scope:
