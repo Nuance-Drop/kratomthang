@@ -1,88 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THANG | Premium Botanicals | Dallas</title>
-    <!-- This line links your CSS - make sure it matches your folder -->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THANG | Premium Botanicals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ethereal.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-wrap">
-            <a href="index.html" class="brand">THANG</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="order.html">Order</a></li>
-            </ul>
+  <!-- Background Effects -->
+  <div class="ethereal-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="logo">THANG</a>
+      <ul class="nav-links">
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="/order.html">Order</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="holo-text">From the Source<br>to the City</h1>
+      <p class="hero-subtitle">
+        Premium Mitragyna Speciosa, ethically harvested.<br>
+        Dallas wholesale & retail. 50+ strains.
+      </p>
+      <div>
+        <a href="#collection" class="btn-liquid">Explore Collection</a>
+        <a href="/order.html" class="btn-liquid">Place Order</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Strains -->
+  <section id="collection" class="strains-section">
+    <div class="section-header">
+      <h2 class="holo-text">Featured Strains</h2>
+      <p style="color: rgba(255,255,255,0.5);">Hover to reveal essence</p>
+    </div>
+
+    <div class="strain-grid">
+      <!-- Green Maeng Da -->
+      <div class="glass strain-card">
+        <div class="strain-visual">
+          <!-- Add your photo here later -->
+          <span style="color: rgba(255,255,255,0.1); font-size: 4rem;">🌿</span>
         </div>
-    </nav>
+        <div class="strain-info">
+          <div class="strain-vein vein-green">Green Vein</div>
+          <h3 class="strain-name">Maeng Da</h3>
+          <p class="strain-desc">The connoisseur's standard. Balanced alkaloid profile for clarity and presence.</p>
+          <div class="strain-meta">
+            <span style="color: rgba(255,255,255,0.5);">Thailand</span>
+            <span class="price">$125/kg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Red Bali -->
+      <div class="glass strain-card">
+        <div class="strain-visual">
+          <span style="color: rgba(255,255,255,0.1); font-size: 4rem;">🍂</span>
+        </div>
+        <div class="strain-info">
+          <div class="strain-vein vein-red">Red Vein</div>
+          <h3 class="strain-name">Bali</h3>
+          <p class="strain-desc">Evening tranquility. Deep, earthy characteristics for relaxation and study.</p>
+          <div class="strain-meta">
+            <span style="color: rgba(255,255,255,0.5);">Indonesia</span>
+            <span class="price">$125/kg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- White Borneo -->
+      <div class="glass strain-card">
+        <div class="strain-visual">
+          <span style="color: rgba(255,255,255,0.1); font-size: 4rem;">☁️</span>
+        </div>
+        <div class="strain-info">
+          <div class="strain-vein vein-white">White Vein</div>
+          <h3 class="strain-name">Borneo</h3>
+          <p class="strain-desc">Morning elevation. Crisp, clean energy for the creative professional.</p>
+          <div class="strain-meta">
+            <span style="color: rgba(255,255,255,0.5);">Borneo</span>
+            <span class="price">$125/kg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gold Thai -->
+      <div class="glass strain-card">
+        <div class="strain-visual">
+          <span style="color: rgba(255,255,255,0.1); font-size: 4rem;">✨</span>
+        </div>
+        <div class="strain-info">
+          <div class="strain-vein vein-gold">Gold Vein</div>
+          <h3 class="strain-name">Thai Reserve</h3>
+          <p class="strain-desc">Fermented rarity. Limited batch with complex, wine-like depth.</p>
+          <div class="strain-meta">
+            <span style="color: rgba(255,255,255,0.5);">Thailand</span>
+            <span class="price">$140/kg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing-container">
+    <div class="section-header">
+      <h2 class="holo-text">Exchange Rates</h2>
+    </div>
     
-    <section class="hero">
-        <h1>Premium Botanicals</h1>
-        <p class="hero-subtitle">Dallas Wholesale & Retail | 50+ Strains | Same Day DFW</p>
-        <div class="btn-group">
-            <a href="order.html" class="btn btn-primary">View Menu</a>
-            <a href="education.html" class="btn">Learn More</a>
-        </div>
-    </section>
+    <div class="pricing-table">
+      <div class="glass price-col">
+        <h3>Wholesale</h3>
+        <div class="price-row"><span>1 oz</span><span>$8</span></div>
+        <div class="price-row"><span>4 oz</span><span>$20</span></div>
+        <div class="price-row"><span>8 oz</span><span>$35</span></div>
+        <div class="price-row"><span>16 oz</span><span>$65</span></div>
+        <div class="price-row"><span>1 kg</span><span>$125</span></div>
+        <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: rgba(255,255,255,0.4);">
+          Min order $100 • Net-30 available
+        </p>
+      </div>
 
-    <section class="featured">
-        <h2 style="text-align: center; margin-bottom: 3rem; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #d4af37;">Featured Strains</h2>
-        
-      <div class="strain-card">
-    <div class="strain-image">
-        <!-- Replace this div with your photo later -->
-        <img src="images/green-maeng-da.jpg" alt="Green Maeng Da" style="display: none;">
+      <div class="glass price-col">
+        <h3>Retail</h3>
+        <div class="price-row"><span>1 oz</span><span>$11</span></div>
+        <div class="price-row"><span>4 oz</span><span>$35</span></div>
+        <div class="price-row"><span>8 oz</span><span>$65</span></div>
+        <div class="price-row"><span>16 oz</span><span>$125</span></div>
+        <div class="price-row"><span>1 kg</span><span>$240</span></div>
+        <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: rgba(255,255,255,0.4);">
+          Free DFW delivery $100+ • $15 ship
+        </p>
+      </div>
     </div>
-    <div class="strain-info">
-        <div class="strain-type">Green Vein</div>
-        <h3 class="strain-name">Maeng Da</h3>
-        <p class="strain-desc">Balanced, potent, energizing. The connoisseur's choice for clarity and focus.</p>
-        <div class="strain-price">$11/oz retail &nbsp;|&nbsp; $8 wholesale</div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <p style="color: var(--gold); letter-spacing: 0.2em; font-size: 0.9rem; margin-bottom: 0.5rem;">
+        Cash App • Venmo • Zelle • Crypto
+      </p>
+      <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem;">
+        No credit cards accepted
+      </p>
     </div>
-</div>
-    </section>
+  </section>
 
-    <section class="pricing-section" style="padding: 4rem 2rem; max-width: 1000px; margin: 0 auto;">
-        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 3rem; color: #d4af37;">Pricing</h2>
-        
-        <div class="pricing-grid">
-            <div class="price-card">
-                <h3>Wholesale</h3>
-                <ul class="price-list">
-                    <li><span>1 oz</span> <span>$8</span></li>
-                    <li><span>4 oz</span> <span>$20</span></li>
-                    <li><span>8 oz</span> <span>$35</span></li>
-                    <li><span>16 oz</span> <span>$65</span></li>
-                    <li><span>1 kg</span> <span>$125</span></li>
-                </ul>
-            </div>
-            
-            <div class="price-card">
-                <h3>Retail</h3>
-                <ul class="price-list">
-                    <li><span>1 oz</span> <span>$11</span></li>
-                    <li><span>4 oz</span> <span>$35</span></li>
-                    <li><span>8 oz</span> <span>$65</span></li>
-                    <li><span>16 oz</span> <span>$125</span></li>
-                    <li><span>1 kg</span> <span>$240</span></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px;">
-            <p style="font-weight: 600; color: #d4af37;">Payment Methods: Cash App • Venmo • Zelle • Crypto</p>
-            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">No credit cards accepted</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-brand">THANG</div>
-        <p style="color: #666; margin-bottom: 1rem;">Garland, TX • orders@kratomthang.com • Telegram: @kratomthang</p>
-        <p class="disclaimer">Must be 21+. For research & collection only. Not for human consumption.</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">THANG</div>
+    <div class="footer-text">
+      Garland, Texas<br>
+      orders@kratomthang.com • Telegram: @kratomthang<br>
+      <span style="font-size: 0.8rem; opacity: 0.6;">
+        21+ Only • Research purposes only • Not for human consumption
+      </span>
+    </div>
+  </footer>
 </body>
 </html>
