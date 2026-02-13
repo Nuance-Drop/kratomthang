@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | THANG Botanicals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/mylar.css">
+</head>
+<body>
+  <div class="chrome-bg"></div>
+  <div class="noise"></div>
+
+  <nav class="mylar-nav">
+    <div class="nav-container">
+      <a href="/" class="chrome-logo">THANG</a>
+      <ul class="nav-links">
+        <li><a href="/strains.html">CATALOG</a></li>
+        <li><a href="/order.html">ORDER</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="strain-hero" style="padding-top: 120px;">
+    <div class="strain-mylar-bag-large">
+      <div class="holo-sheen"></div>
+      <div class="bag-content">
+        <span class="vein-badge {{ page.category | downcase }}">{{ page.category }} VEIN</span>
+        <h1 class="chrome-text massive">{{ page.title }}</h1>
+        <p class="origin-tag">{{ page.origin }}</p>
+        
+        <div class="strain-specs">
+          <div class="spec">
+            <span class="label">Type</span>
+            <span class="value">{{ page.type }}</span>
+          </div>
+          <div class="spec">
+            <span class="label">Origin</span>
+            <span class="value">{{ page.origin }}</span>
+          </div>
+          <div class="spec">
+            <span class="label">Wholesale</span>
+            <span class="value">${{ page.price_wholesale }}/kg</span>
+          </div>
+        </div>
+
+        <div class="price-matrix">
+          <div class="price-row">
+            <span>Retail Price</span>
+            <span class="price">${{ page.price_retail }}/kg</span>
+          </div>
+          <div class="price-row wholesale">
+            <span>Wholesale Price</span>
+            <span class="price" style="color: #06ffa5;">${{ page.price_wholesale }}/kg</span>
+          </div>
+        </div>
+
+        <a href="/order.html?strain={{ page.title | url_encode }}" class="mylar-btn primary large">ORDER {{ page.title | upcase }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="strain-details">
+    <div class="detail-grid">
+      <div class="detail-card">
+        <h3>Description</h3>
+        <p>{{ content }}</p>
+      </div>
+      <div class="detail-card">
+        <h3>Effects Profile</h3>
+        <p>{{ page.effects }}</p>
+      </div>
+      <div class="detail-card">
+        <h3>Quality Guarantee</h3>
+        <p>Lab-tested for purity. Direct from Indonesian family farms. HTS Code: 1211.90.8090. Customs cleared.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="chrome-footer">
+    <p class="chrome-text small">THANG BOTANICALS</p>
+    <p>GARLAND, TX • ORDERS@KRATOMTHANG.COM</p>
+    <p class="disclaimer">21+ ONLY • RESEARCH PURPOSES • NOT FOR HUMAN CONSUMPTION</p>
+  </footer>
+</body>
+</html>
