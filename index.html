@@ -120,20 +120,35 @@
     <p class="disclaimer">21+ ONLY • RESEARCH PURPOSES</p>
   </footer>
 
-  <script>
-    if (!localStorage.getItem('ageVerified')) {
-      document.body.innerHTML = `
-        <div id="age-gate" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#050505;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:Orbitron,sans-serif;">
-          <h1 style="font-size:3rem;background:linear-gradient(135deg,#ff006e,#8338ec);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem;">THANG</h1>
-          <h2 style="color:#fff;font-size:1.5rem;margin-bottom:1rem;">Age Verification Required</h2>
-          <p style="color:#888;margin-bottom:2rem;font-family:Rajdhani,sans-serif;">You must be 21+ to enter. Not for human consumption.</p>
-          <div>
-            <button onclick="localStorage.setItem('ageVerified','true');location.reload()" style="background:linear-gradient(135deg,#ff006e,#8338ec);color:#fff;border:none;padding:1rem 2rem;margin:0 0.5rem;cursor:pointer;font-family:Orbitron;font-weight:700;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);">I am 21+</button>
-            <button onclick="window.location.href='https://google.com'" style="background:transparent;color:#fff;border:1px solid #fff;padding:1rem 2rem;margin:0 0.5rem;cursor:pointer;font-family:Orbitron;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);">Exit</button>
-          </div>
-        </div>
-      ` + document.body.innerHTML;
-    }
-  </script>
+ <!-- Age Gate -->
+<script>
+(function() {
+  if (localStorage.getItem('ageVerified') === 'true') return;
+  
+  var gate = document.createElement('div');
+  gate.id = 'age-gate';
+  gate.innerHTML = `
+    <div style="position:fixed;top:0;left:0;width:100%;height:100%;background:#050505;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:Orbitron,sans-serif;">
+      <h1 style="font-size:3rem;background:linear-gradient(135deg,#ff006e,#8338ec);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem;">THANG</h1>
+      <h2 style="color:#fff;font-size:1.5rem;margin-bottom:1rem;">Age Verification Required</h2>
+      <p style="color:#888;margin-bottom:2rem;font-family:Rajdhani,sans-serif;">You must be 21+ to enter. Not for human consumption.</p>
+      <div>
+        <button id="age-yes" style="background:linear-gradient(135deg,#ff006e,#8338ec);color:#fff;border:none;padding:1rem 2rem;margin:0 0.5rem;cursor:pointer;font-family:Orbitron;font-weight:700;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);">I am 21+</button>
+        <button id="age-no" style="background:transparent;color:#fff;border:1px solid #fff;padding:1rem 2rem;margin:0 0.5rem;cursor:pointer;font-family:Orbitron;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);">Exit</button>
+      </div>
+      <p style="color:#444;margin-top:2rem;font-size:0.8rem;max-width:400px;text-align:center;">FDA Disclaimer: Not intended to diagnose, treat, cure, or prevent any disease. For research purposes only.</p>
+    </div>
+  `;
+  document.body.appendChild(gate);
+  
+  document.getElementById('age-yes').onclick = function() {
+    localStorage.setItem('ageVerified', 'true');
+    gate.style.display = 'none';
+  };
+  document.getElementById('age-no').onclick = function() {
+    window.location.href = 'https://google.com';
+  };
+})();
+</script>
 </body>
 </html>
