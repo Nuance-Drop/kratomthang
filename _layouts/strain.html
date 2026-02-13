@@ -2,58 +2,314 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.name }} | THANG</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/ethereal.css">
+  <title>Full Catalog | THANG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/mylar.css">
 </head>
-<body style="padding-top: 120px;">
-  <div class="ethereal-bg"></div>
-  <div class="orb orb-1"></div>
+<body>
+  <div class="holo-bg"></div>
   
-  <nav>
+  <nav class="mylar-nav">
     <div class="nav-container">
-      <a href="/" class="logo">THANG</a>
+      <a href="/" class="chrome-logo">THANG</a>
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/#collection">Collection</a></li>
-        <li><a href="/order.html">Order</a></li>
+        <li><a href="/strains.html">CATALOG</a></li>
+        <li><a href="/order.html">ORDER</a></li>
       </ul>
     </div>
   </nav>
 
-  <section style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
-    <div class="glass" style="padding: 4rem;">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-        <div class="strain-visual" style="height: 400px; border-radius: 16px;">
-          <span style="font-size: 6rem;">🌿</span>
-        </div>
-        <div>
-          <div class="strain-vein {% if page.type contains 'Red' %}vein-red{% elsif page.type contains 'White' %}vein-white{% elsif page.type contains 'Gold' %}vein-gold{% else %}vein-green{% endif %}">
-            {{ page.type }} | {{ page.origin }}
-          </div>
-          <h1 class="holo-text" style="font-size: 3rem; margin-bottom: 1rem;">{{ page.name }}</h1>
-          <p style="color: rgba(255,255,255,0.6); font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.6;">
-            {{ content }}
-          </p>
-          <div style="margin: 2rem 0;">
-            <p style="color: var(--gold); margin-bottom: 0.5rem;">Effects: {{ page.effects }}</p>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;">
-            <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; text-align: center;">
-              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Wholesale</div>
-              <div style="font-size: 1.5rem; color: var(--gold);">${{ page.price_wholesale }}/kg</div>
-            </div>
-            <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; text-align: center;">
-              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Retail</div>
-              <div style="font-size: 1.5rem; color: white;">${{ page.price_retail }}/kg</div>
-            </div>
-          </div>
-          <a href="/order.html?strain={{ page.name | url_encode }}" class="btn-liquid" style="display: block; text-align: center; margin-top: 2rem; border-radius: 12px;">
-            Order {{ page.name }}
-          </a>
-        </div>
-      </div>
+  <section class="catalog-hero">
+    <h1 class="chrome-text huge">STRAIN CATALOG</h1>
+    <p class="sub-text">50+ PREMIUM VARIETIES • DIRECT TRADE</p>
+  </section>
+
+  <section class="strain-list">
+    <!-- GREEN VEINS -->
+    <div class="category-header">
+      <span class="chrome-text">GREEN VEIN</span>
+      <div class="rainbow-line"></div>
+    </div>
+    
+    <div class="compact-grid">
+      <a href="/green-maeng-da/" class="compact-card">
+        <span class="name">Maeng Da</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/super-green/" class="compact-card">
+        <span class="name">Super Green</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/green-horn/" class="compact-card">
+        <span class="name">Horn</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/green-bali/" class="compact-card">
+        <span class="name">Bali</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/green-borneo/" class="compact-card">
+        <span class="name">Borneo</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/green-thai/" class="compact-card">
+        <span class="name">Thai</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/green-malay/" class="compact-card">
+        <span class="name">Malay</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/green-elephant/" class="compact-card">
+        <span class="name">Elephant</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/green-dragon/" class="compact-card">
+        <span class="name">Dragon</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/green-pucuk/" class="compact-card">
+        <span class="name">Pucuk</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/green-ketapang/" class="compact-card">
+        <span class="name">Ketapang</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/green-sumatra/" class="compact-card">
+        <span class="name">Sumatra</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/green-hulu-kapuas/" class="compact-card">
+        <span class="name">Hulu Kapuas</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/green-stem-vein/" class="compact-card">
+        <span class="name">Stem & Vein</span>
+        <span class="price">$110</span>
+      </a>
+    </div>
+
+    <!-- RED VEINS -->
+    <div class="category-header">
+      <span class="chrome-text red">RED VEIN</span>
+      <div class="rainbow-line red"></div>
+    </div>
+    
+    <div class="compact-grid">
+      <a href="/red-bali/" class="compact-card red">
+        <span class="name">Bali</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/red-horn/" class="compact-card red">
+        <span class="name">Horn</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/red-thai/" class="compact-card red">
+        <span class="name">Thai</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/red-borneo/" class="compact-card red">
+        <span class="name">Borneo</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/red-maeng-da/" class="compact-card red">
+        <span class="name">Maeng Da</span>
+        <span class="price">$135</span>
+      </a>
+      <a href="/red-bentuangie/" class="compact-card red">
+        <span class="name">Bentuangie</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/red-dragon/" class="compact-card red">
+        <span class="name">Dragon</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/red-elephant/" class="compact-card red">
+        <span class="name">Elephant</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/red-vietnam/" class="compact-card red">
+        <span class="name">Vietnam</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/red-sumatra/" class="compact-card red">
+        <span class="name">Sumatra</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/red-hulu-kapuas/" class="compact-card red">
+        <span class="name">Hulu Kapuas</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/red-malay/" class="compact-card red">
+        <span class="name">Malay</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/red-pucuk/" class="compact-card red">
+        <span class="name">Pucuk</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/red-ketapang/" class="compact-card red">
+        <span class="name">Ketapang</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/red-stem-vein/" class="compact-card red">
+        <span class="name">Stem & Vein</span>
+        <span class="price">$110</span>
+      </a>
+    </div>
+
+    <!-- WHITE VEINS -->
+    <div class="category-header">
+      <span class="chrome-text white">WHITE VEIN</span>
+      <div class="rainbow-line white"></div>
+    </div>
+    
+    <div class="compact-grid">
+      <a href="/white-borneo/" class="compact-card white">
+        <span class="name">Borneo</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/white-horn/" class="compact-card white">
+        <span class="name">Horn</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/white-thai/" class="compact-card white">
+        <span class="name">Thai</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/white-bali/" class="compact-card white">
+        <span class="name">Bali</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/white-maeng-da/" class="compact-card white">
+        <span class="name">Maeng Da</span>
+        <span class="price">$135</span>
+      </a>
+      <a href="/white-elephant/" class="compact-card white">
+        <span class="name">Elephant</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/white-vietnam/" class="compact-card white">
+        <span class="name">Vietnam</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/white-sumatra/" class="compact-card white">
+        <span class="name">Sumatra</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/white-hulu-kapuas/" class="compact-card white">
+        <span class="name">Hulu Kapuas</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/white-malay/" class="compact-card white">
+        <span class="name">Malay</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/white-pucuk/" class="compact-card white">
+        <span class="name">Pucuk</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/white-ketapang/" class="compact-card white">
+        <span class="name">Ketapang</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/white-stem-vein/" class="compact-card white">
+        <span class="name">Stem & Vein</span>
+        <span class="price">$110</span>
+      </a>
+    </div>
+
+    <!-- GOLD/YELLOW -->
+    <div class="category-header">
+      <span class="chrome-text gold">GOLD & YELLOW</span>
+      <div class="rainbow-line gold"></div>
+    </div>
+    
+    <div class="compact-grid">
+      <a href="/gold-thai/" class="compact-card gold">
+        <span class="name">Thai Reserve</span>
+        <span class="price">$140</span>
+      </a>
+      <a href="/gold-borneo/" class="compact-card gold">
+        <span class="name">Borneo</span>
+        <span class="price">$135</span>
+      </a>
+      <a href="/gold-elephant/" class="compact-card gold">
+        <span class="name">Elephant</span>
+        <span class="price">$140</span>
+      </a>
+      <a href="/yellow-bali/" class="compact-card gold">
+        <span class="name">Yellow Bali</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/yellow-borneo/" class="compact-card gold">
+        <span class="name">Yellow Borneo</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/yellow-vietnam/" class="compact-card gold">
+        <span class="name">Yellow Vietnam</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/yellow-sumatra/" class="compact-card gold">
+        <span class="name">Yellow Sumatra</span>
+        <span class="price">$125</span>
+      </a>
+      <a href="/yellow-hulu-kapuas/" class="compact-card gold">
+        <span class="name">Yellow Hulu</span>
+        <span class="price">$130</span>
+      </a>
+      <a href="/yellow-stem-vein/" class="compact-card gold">
+        <span class="name">Yellow Stem</span>
+        <span class="price">$110</span>
+      </a>
+    </div>
+
+    <!-- SPECIALTY -->
+    <div class="category-header">
+      <span class="chrome-text special">SPECIALTY & RARE</span>
+      <div class="rainbow-line special"></div>
+    </div>
+    
+    <div class="compact-grid">
+      <a href="/aceh-green/" class="compact-card special">
+        <span class="name">Aceh Green</span>
+        <span class="price">$140</span>
+      </a>
+      <a href="/aceh-red/" class="compact-card special">
+        <span class="name">Aceh Red</span>
+        <span class="price">$140</span>
+      </a>
+      <a href="/aceh-white/" class="compact-card special">
+        <span class="name">Aceh White</span>
+        <span class="price">$140</span>
+      </a>
+      <a href="/aceh-yellow/" class="compact-card special">
+        <span class="name">Aceh Yellow</span>
+        <span class="price">$140</span>
+      </a>
+      <a href="/zombie-green/" class="compact-card special">
+        <span class="name">Zombie Green</span>
+        <span class="price">$150</span>
+      </a>
+      <a href="/zombie-red/" class="compact-card special">
+        <span class="name">Zombie Red</span>
+        <span class="price">$150</span>
+      </a>
+      <a href="/zombie-white/" class="compact-card special">
+        <span class="name">Zombie White</span>
+        <span class="price">$150</span>
+      </a>
+      <a href="/zombie-yellow/" class="compact-card special">
+        <span class="name">Zombie Yellow</span>
+        <span class="price">$150</span>
+      </a>
     </div>
   </section>
+
+  <footer class="chrome-footer">
+    <a href="/order.html" class="mylar-btn primary large">PLACE ORDER</a>
+    <p style="margin-top: 2rem; opacity: 0.6;">50+ STRAINS • WHOLESALE • RETAIL • DALLAS</p>
+  </footer>
 </body>
 </html>
