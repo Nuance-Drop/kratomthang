@@ -3,874 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THANG Kratom | Dallas Wholesale & Retail | 50+ Strains</title>
-    <meta name="description" content="Buy kratom wholesale Dallas. 50+ strains: Maeng Da, Bali, Borneo, Aceh, Zombie. Best prices Texas.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --neon-green: #39ff14;
-            --electric-gold: #ffd700;
-            --holo-pink: #ff00ff;
-            --holo-cyan: #00ffff;
-            --deep-purple: #1a0033;
-            --void: #0a0014;
-            --hot-pink: #ff0066;
-            --lime: #ccff00;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #0a0014 0%, #1a0033 50%, #0d0021 100%);
-            color: white;
-            overflow-x: hidden;
-        }
-        
-        /* Holographic Dragon Animation */
-        .dragon-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.15;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(255,0,255,0.3) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 50%, rgba(0,255,255,0.3) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 100%, rgba(255,215,0,0.2) 0%, transparent 50%);
-            animation: holoShift 10s ease-in-out infinite;
-        }
-        
-        @keyframes holoShift {
-            0%, 100% { filter: hue-rotate(0deg); }
-            50% { filter: hue-rotate(30deg); }
-        }
-        
-        /* Floating Long Dragon */
-        .dragon-float {
-            position: fixed;
-            width: 100%;
-            height: 300px;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.2;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(255,215,0,0.4) 20%, 
-                rgba(255,0,255,0.4) 40%,
-                rgba(0,255,255,0.4) 60%,
-                rgba(255,215,0,0.4) 80%,
-                transparent 100%);
-            filter: blur(60px);
-            animation: dragonFlow 15s linear infinite;
-            top: 20%;
-        }
-        
-        .dragon-float.reverse {
-            animation-direction: reverse;
-            top: 60%;
-            opacity: 0.15;
-        }
-        
-        @keyframes dragonFlow {
-            0% { transform: translateX(-100%) scaleY(1); }
-            100% { transform: translateX(100%) scaleY(1.5); }
-        }
-        
-        /* Sparkle Effects */
-        .sparkle {
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 2;
-            animation: sparkle 3s linear infinite;
-            box-shadow: 0 0 10px var(--electric-gold);
-        }
-        
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-        
-        /* Age Gate */
-        #age-gate {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(45deg, #1a0033, #330066, #1a0033);
-            z-index: 10000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .age-box {
-            background: rgba(0,0,0,0.8);
-            border: 3px solid transparent;
-            border-image: linear-gradient(45deg, var(--neon-green), var(--electric-gold), var(--holo-pink)) 1;
-            padding: 3rem;
-            max-width: 600px;
-            position: relative;
-            box-shadow: 0 0 50px rgba(255,215,0,0.3);
-        }
-        
-        .age-box h1 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 4rem;
-            background: linear-gradient(45deg, var(--neon-green), var(--electric-gold), var(--holo-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            letter-spacing: 0.1em;
-        }
-        
-        .age-box p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #ccc;
-        }
-        
-        .age-btn {
-            padding: 1rem 3rem;
-            margin: 0.5rem;
-            border: 2px solid var(--neon-green);
-            background: transparent;
-            color: var(--neon-green);
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            letter-spacing: 0.1em;
-        }
-        
-        .age-btn:hover {
-            background: var(--neon-green);
-            color: black;
-            box-shadow: 0 0 30px var(--neon-green);
-        }
-        
-        .age-btn.exit {
-            border-color: var(--hot-pink);
-            color: var(--hot-pink);
-        }
-        
-        .age-btn.exit:hover {
-            background: var(--hot-pink);
-            color: white;
-        }
-        
-        /* Header */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(10,0,20,0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid var(--electric-gold);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        
-        .nav-wrap {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .brand {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            color: var(--electric-gold);
-            text-decoration: none;
-            text-shadow: 0 0 20px rgba(255,215,0,0.5);
-            letter-spacing: 0.2em;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.3rem;
-            letter-spacing: 0.1em;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--neon-green);
-            text-shadow: 0 0 10px var(--neon-green);
-        }
-        
-        /* Hero */
-        .hero {
-            margin-top: 80px;
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .hero h1 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 6rem;
-            line-height: 1;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--neon-green), var(--electric-gold), var(--holo-pink), var(--holo-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 50px rgba(255,215,0,0.3);
-            animation: holoText 5s ease-in-out infinite;
-        }
-        
-        @keyframes holoText {
-            0%, 100% { filter: hue-rotate(0deg); }
-            50% { filter: hue-rotate(20deg); }
-        }
-        
-        .hero h2 {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.8rem;
-            color: var(--electric-gold);
-            margin-bottom: 1rem;
-            font-weight: 300;
-            letter-spacing: 0.2em;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: #aaa;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            margin: 0.5rem;
-            background: linear-gradient(45deg, var(--neon-green), var(--lime));
-            color: black;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.5rem;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(57,255,20,0.4);
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-        }
-        
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(57,255,20,0.6);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--electric-gold);
-            color: var(--electric-gold);
-            box-shadow: 0 0 20px rgba(255,215,0,0.2);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--electric-gold);
-            color: black;
-        }
-        
-        /* Pricing Section */
-        .section-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 4rem;
-            text-align: center;
-            color: var(--electric-gold);
-            margin: 4rem 0 2rem;
-            text-shadow: 0 0 30px rgba(255,215,0,0.3);
-            position: relative;
-            z-index: 10;
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .price-card {
-            background: rgba(255,255,255,0.05);
-            border: 2px solid transparent;
-            border-image: linear-gradient(45deg, var(--neon-green), var(--electric-gold)) 1;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .price-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s;
-        }
-        
-        .price-card:hover::before {
-            left: 100%;
-        }
-        
-        .price-card h3 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2rem;
-            color: var(--neon-green);
-            margin-bottom: 1rem;
-        }
-        
-        .price {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--electric-gold);
-            margin: 1rem 0;
-            text-shadow: 0 0 20px rgba(255,215,0,0.3);
-        }
-        
-        .price-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-        
-        .price-list li {
-            padding: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        /* Strain Library */
-        .strain-section {
-            max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .strain-category {
-            margin: 3rem 0;
-            border: 2px solid;
-            border-image: linear-gradient(90deg, var(--neon-green), var(--electric-gold)) 1;
-            background: rgba(0,0,0,0.5);
-        }
-        
-        .strain-header {
-            background: linear-gradient(90deg, rgba(57,255,20,0.2), rgba(255,215,0,0.2));
-            padding: 1rem;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2rem;
-            color: var(--electric-gold);
-            letter-spacing: 0.2em;
-            border-bottom: 2px solid var(--electric-gold);
-        }
-        
-        .strain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            padding: 1rem;
-        }
-        
-        .strain-item {
-            background: rgba(255,255,255,0.05);
-            padding: 1rem;
-            border-left: 4px solid var(--neon-green);
-            transition: all 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .strain-item:hover {
-            background: rgba(57,255,20,0.1);
-            transform: translateX(5px);
-        }
-        
-        .strain-item.red { border-left-color: var(--hot-pink); }
-        .strain-item.red:hover { background: rgba(255,0,102,0.1); }
-        
-        .strain-item.white { border-left-color: var(--holo-cyan); }
-        .strain-item.white:hover { background: rgba(0,255,255,0.1); }
-        
-        .strain-item.gold { border-left-color: var(--electric-gold); }
-        .strain-item.gold:hover { background: rgba(255,215,0,0.1); }
-        
-        .strain-item.special { border-left-color: var(--holo-pink); }
-        .strain-item.special:hover { background: rgba(255,0,255,0.1); }
-        
-        .strain-name { font-weight: 700; color: white; }
-        .strain-type { font-size: 0.8rem; color: #888; }
-        
-        /* Order Form */
-        .order-section {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 3rem;
-            background: rgba(255,255,255,0.05);
-            border: 3px solid;
-            border-image: linear-gradient(45deg, var(--neon-green), var(--electric-gold), var(--holo-pink)) 1;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .form-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 3rem;
-            color: var(--electric-gold);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .form-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3.5rem; }
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        label {
-            display: block;
-            color: var(--neon-green);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.9rem;
-        }
-        
-        input, select {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid var(--electric-gold);
-            color: white;
-            font-size: 1rem;
-        }
-        
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--neon-green);
-            box-shadow: 0 0 10px var(--neon-green);
-        }
-        
-        .full-width {
-            grid-column: 1 / -1;
-        }
-        
-        /* Payment Methods */
-        .payment-box {
-            text-align: center;
-            padding: 2rem;
-            margin: 3rem auto;
-            max-width: 800px;
-            background: linear-gradient(45deg, rgba(57,255,20,0.1), rgba(255,215,0,0.1));
-            border: 2px dashed var(--electric-gold);
-            position: relative;
-            z-index: 10;
-        }
-        
-        .payment-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2rem;
-            color: var(--electric-gold);
-            margin-bottom: 1rem;
-        }
-        
-        .payment-list {
-            font-size: 1.3rem;
-            color: white;
-            word-spacing: 1rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(0,0,0,0.9);
-            border-top: 2px solid var(--electric-gold);
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .footer-logo {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: var(--electric-gold);
-            margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(255,215,0,0.5);
-        }
-        
-        .footer-text {
-            color: #888;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        
-        .disclaimer {
-            font-size: 0.8rem;
-            color: #666;
-            max-width: 800px;
-            margin: 2rem auto 0;
-            line-height: 1.6;
-        }
-        
-        .hidden { display: none !important; }
-        
-        .toast {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--neon-green);
-            color: black;
-            padding: 1.5rem 3rem;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.5rem;
-            z-index: 10001;
-            display: none;
-            box-shadow: 0 0 30px var(--neon-green);
-        }
-    </style>
+    <title>THANG | Premium Botanicals | Dallas</title>
+    <!-- This line links your CSS - make sure it matches your folder -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Effects -->
-    <div class="dragon-bg"></div>
-    <div class="dragon-float"></div>
-    <div class="dragon-float reverse"></div>
-    
-    <!-- Sparkles -->
-    <div class="sparkle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-    <div class="sparkle" style="top: 30%; left: 80%; animation-delay: 1s;"></div>
-    <div class="sparkle" style="top: 60%; left: 40%; animation-delay: 2s;"></div>
-    <div class="sparkle" style="top: 80%; left: 70%; animation-delay: 0.5s;"></div>
-
-    <!-- Age Gate -->
-    <div id="age-gate">
-        <div class="age-box">
-            <h1>THANG</h1>
-            <p>PREMIUM BOTANICALS<br>Must be 21+ to enter<br>Products for research & collection only</p>
-            <button class="age-btn" onclick="verifyAge(true)">ENTER (21+)</button>
-            <button class="age-btn exit" onclick="verifyAge(false)">LEAVE</button>
-        </div>
-    </div>
-
-    <!-- Navigation -->
     <nav>
         <div class="nav-wrap">
-            <a href="#" class="brand">THANG</a>
+            <a href="index.html" class="brand">THANG</a>
             <ul class="nav-links">
-                <li><a href="#strains">STRAINS</a></li>
-                <li><a href="#prices">PRICES</a></li>
-                <li><a href="#order">ORDER</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="order.html">Order</a></li>
             </ul>
         </div>
     </nav>
-
-    <!-- Hero -->
+    
     <section class="hero">
-        <h1>BUY KRATOM<br>DALLAS</h1>
-        <h2>WHOLESALE & RETAIL</h2>
-        <p>50+ Strains • Best Prices Texas • Same Day DFW Delivery<br>
-           Green Maeng Da • Red Bali • White Borneo • Aceh • Zombie</p>
-        <div>
-            <a href="#prices" class="btn">VIEW PRICES</a>
-            <a href="#order" class="btn btn-secondary">PLACE ORDER</a>
+        <h1>Premium Botanicals</h1>
+        <p class="hero-subtitle">Dallas Wholesale & Retail | 50+ Strains | Same Day DFW</p>
+        <div class="btn-group">
+            <a href="order.html" class="btn btn-primary">View Menu</a>
+            <a href="education.html" class="btn">Learn More</a>
         </div>
     </section>
 
-    <!-- Prices -->
-    <h2 class="section-title" id="prices">PRICES</h2>
-    
-    <div class="pricing-grid">
-        <div class="price-card">
-            <h3>WHOLESALE</h3>
-            <div class="price">$8<small>/oz</small></div>
-            <ul class="price-list">
-                <li><span>1 oz</span> <span>$8</span></li>
-                <li><span>4 oz</span> <span>$20</span></li>
-                <li><span>8 oz</span> <span>$35</span></li>
-                <li><span>16 oz</span> <span>$65</span></li>
-                <li><span>1 Kilo</span> <span>$125</span></li>
-            </ul>
-            <p style="margin-top: 1rem; color: #888; font-size: 0.9rem;">Min order $100 • Net-30 available</p>
+    <section class="featured">
+        <h2 style="text-align: center; margin-bottom: 3rem; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #d4af37;">Featured Strains</h2>
+        
+        <div class="strain-grid">
+            <div class="glass-card">
+                <div class="strain-type">Green Vein</div>
+                <h3 class="strain-name">Maeng Da</h3>
+                <p>Balanced, potent, energizing. The connoisseur's choice.</p>
+                <div class="strain-price">$11/oz retail | $8 wholesale</div>
+            </div>
+            
+            <div class="glass-card">
+                <div class="strain-type" style="color: #ff6b6b;">Red Vein</div>
+                <h3 class="strain-name">Bali</h3>
+                <p>Classic red. Evening relaxation, deep tranquility.</p>
+                <div class="strain-price">$11/oz retail | $8 wholesale</div>
+            </div>
+            
+            <div class="glass-card">
+                <div class="strain-type" style="color: #4ecdc4;">White Vein</div>
+                <h3 class="strain-name">Borneo</h3>
+                <p>Morning clarity. Clean energy and focus.</p>
+                <div class="strain-price">$11/oz retail | $8 wholesale</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" style="padding: 4rem 2rem; max-width: 1000px; margin: 0 auto;">
+        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 3rem; color: #d4af37;">Pricing</h2>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Wholesale</h3>
+                <ul class="price-list">
+                    <li><span>1 oz</span> <span>$8</span></li>
+                    <li><span>4 oz</span> <span>$20</span></li>
+                    <li><span>8 oz</span> <span>$35</span></li>
+                    <li><span>16 oz</span> <span>$65</span></li>
+                    <li><span>1 kg</span> <span>$125</span></li>
+                </ul>
+            </div>
+            
+            <div class="price-card">
+                <h3>Retail</h3>
+                <ul class="price-list">
+                    <li><span>1 oz</span> <span>$11</span></li>
+                    <li><span>4 oz</span> <span>$35</span></li>
+                    <li><span>8 oz</span> <span>$65</span></li>
+                    <li><span>16 oz</span> <span>$125</span></li>
+                    <li><span>1 kg</span> <span>$240</span></li>
+                </ul>
+            </div>
         </div>
         
-        <div class="price-card">
-            <h3>RETAIL</h3>
-            <div class="price">$11<small>/oz</small></div>
-            <ul class="price-list">
-                <li><span>1 oz</span> <span>$11</span></li>
-                <li><span>4 oz</span> <span>$35</span></li>
-                <li><span>8 oz</span> <span>$65</span></li>
-                <li><span>16 oz</span> <span>$125</span></li>
-                <li><span>1 Kilo</span> <span>$240</span></li>
-            </ul>
-            <p style="margin-top: 1rem; color: #888; font-size: 0.9rem;">Free DFW delivery $100+ • Texas shipping $15</p>
+        <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px;">
+            <p style="font-weight: 600; color: #d4af37;">Payment Methods: Cash App • Venmo • Zelle • Crypto</p>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">No credit cards accepted</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Full Strain Library -->
-    <h2 class="section-title" id="strains">ALL STRAINS</h2>
-    <p style="text-align: center; margin-bottom: 3rem; color: #888;">If we don't have it, we'll get it. Special orders welcome.</p>
-    
-    <div class="strain-section">
-        <!-- RED VEIN -->
-        <div class="strain-category">
-            <div class="strain-header">🔴 RED VEIN</div>
-            <div class="strain-grid">
-                <div class="strain-item red"><div class="strain-name">Stem & Vein</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Horn</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Vietnam</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Borneo</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Thai</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Bentuangie</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Bali</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Dragon</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Sumatra</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Hulu Kapuas</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Malay</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Elephant</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Pucuk</div><div class="strain-type">Red</div></div>
-                <div class="strain-item red"><div class="strain-name">Ketapang</div><div class="strain-type">Red</div></div>
-            </div>
-        </div>
-
-        <!-- GREEN VEIN -->
-        <div class="strain-category">
-            <div class="strain-header" style="border-bottom-color: var(--neon-green);">🟢 GREEN VEIN</div>
-            <div class="strain-grid">
-                <div class="strain-item"><div class="strain-name">Stem & Vein</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Super Green</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Horn</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Sumatra</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Bali</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Borneo</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Hulu Kapuas</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Malay</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Thai</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Dragon</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Elephant</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Pucuk</div><div class="strain-type">Green</div></div>
-                <div class="strain-item"><div class="strain-name">Ketapang</div><div class="strain-type">Green</div></div>
-            </div>
-        </div>
-
-        <!-- MAENG DA -->
-        <div class="strain-category">
-            <div class="strain-header" style="border-bottom-color: var(--electric-gold);">⭐ MAENG DA (PREMIUM)</div>
-            <div class="strain-grid">
-                <div class="strain-item gold"><div class="strain-name">Red Maeng Da</div><div class="strain-type">Premium</div></div>
-                <div class="strain-item gold"><div class="strain-name">Yellow Maeng Da</div><div class="strain-type">Premium</div></div>
-                <div class="strain-item gold"><div class="strain-name">White Maeng Da</div><div class="strain-type">Premium</div></div>
-                <div class="strain-item gold"><div class="strain-name">Green Maeng Da</div><div class="strain-type">Premium</div></div>
-            </div>
-        </div>
-
-        <!-- WHITE VEIN -->
-        <div class="strain-category">
-            <div class="strain-header" style="border-bottom-color: var(--holo-cyan);">⚪ WHITE VEIN</div>
-            <div class="strain-grid">
-                <div class="strain-item white"><div class="strain-name">Stem & Vein</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Horn</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Bali</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Sumatra</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Vietnam</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Borneo</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Hulu Kapuas</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Gold</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Thai</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Malay</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Elephant</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Pucuk</div><div class="strain-type">White</div></div>
-                <div class="strain-item white"><div class="strain-name">Ketapang</div><div class="strain-type">White</div></div>
-            </div>
-        </div>
-
-        <!-- YELLOW/GOLD -->
-        <div class="strain-category">
-            <div class="strain-header" style="border-bottom-color: var(--holo-pink);">🟡 YELLOW & GOLD</div>
-            <div class="strain-grid">
-                <div class="strain-item gold"><div class="strain-name">Stem & Vein</div><div class="strain-type">Yellow</div></div>
-                <div class="strain-item gold"><div class="strain-name">Borneo</div><div class="strain-type">Yellow</div></div>
-                <div class="strain-item gold"><div class="strain-name">Bali</div><div class="strain-type">Yellow</div></div>
-                <div class="strain-item gold"><div class="strain-name">Vietnam</div><div class="strain-type">Yellow</div></div>
-                <div class="strain-item gold"><div class="strain-name">Sumatra</div><div class="strain-type">Yellow</div></div>
-                <div class="strain-item gold"><div class="strain-name">Horn</div><div class="strain-type">Yellow</div></div>
-                <div class="strain-item gold"><div class="strain-name">Hulu Kapuas</div><div class="strain-type">Yellow</div></div>
-                <div class="strain-item gold"><div class="strain-name">Gold Borneo</div><div class="strain-type">Gold</div></div>
-                <div class="strain-item gold"><div class="strain-name">Gold Thai</div><div class="strain-type">Gold</div></div>
-                <div class="strain-item gold"><div class="strain-name">Gold Malay</div><div class="strain-type">Gold</div></div>
-                <div class="strain-item gold"><div class="strain-name">Gold Elephant</div><div class="strain-type">Gold</div></div>
-                <div class="strain-item gold"><div class="strain-name">Pucuk Ketapang</div><div class="strain-type">Yellow</div></div>
-            </div>
-        </div>
-
-        <!-- SPECIALTY -->
-        <div class="strain-category">
-            <div class="strain-header" style="border-bottom-color: var(--hot-pink);">✨ SPECIALTY (RARE)</div>
-            <div class="strain-grid">
-                <div class="strain-item special"><div class="strain-name">Aceh Red</div><div class="strain-type">Rare</div></div>
-                <div class="strain-item special"><div class="strain-name">Aceh Yellow</div><div class="strain-type">Rare</div></div>
-                <div class="strain-item special"><div class="strain-name">Aceh White</div><div class="strain-type">Rare</div></div>
-                <div class="strain-item special"><div class="strain-name">Aceh Green</div><div class="strain-type">Rare</div></div>
-                <div class="strain-item special"><div class="strain-name">Zombie Red</div><div class="strain-type">Ultra Rare</div></div>
-                <div class="strain-item special"><div class="strain-name">Zombie Yellow</div><div class="strain-type">Ultra Rare</div></div>
-                <div class="strain-item special"><div class="strain-name">Zombie White</div><div class="strain-type">Ultra Rare</div></div>
-                <div class="strain-item special"><div class="strain-name">Zombie Green</div><div class="strain-type">Ultra Rare</div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Payment -->
-    <div class="payment-box">
-        <div class="payment-title">WE ACCEPT</div>
-        <div class="payment-list">Cash App • Venmo • Zelle • Wire • Crypto</div>
-        <p style="margin-top: 1rem; color: #888; font-size: 0.9rem;">No credit cards (banking restrictions)</p>
-    </div>
-
-    <!-- Order Form -->
-    <div class="order-section" id="order">
-        <div class="form-title">PLACE YOUR ORDER</div>
-        <form id="orderForm">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>Strain</label>
-                    <select name="strain">
-                        <optgroup label="Popular">
-                            <option>Green Maeng Da</option>
-                            <option>Red Bali</option>
-                            <option>White Borneo</option>
-                            <option>Gold Thai</option>
-                        </optgroup>
-                        <optgroup label="Specialty">
-                            <option>Aceh (Any Color)</option>
-                            <option>Zombie (Any Color)</option>
-                            <option>Other (Write in notes)</option>
-                        </optgroup>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Quantity</label>
-                    <select name="qty">
-                        <option>1 oz</option>
-                        <option>4 oz</option>
-                        <option>8 oz</option>
-                        <option>16 oz</option>
-                        <option>1 kg</option>
-                        <option>5+ kg (Wholesale)</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" required placeholder="Your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label>Telegram @</label>
-                    <input type="text" name="telegram" required placeholder="@username">
-                </div>
-                
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" required placeholder="email@example.com">
-                </div>
-                
-                <div class="form-group">
-                    <label>ZIP Code</label>
-                    <input type="text" name="zip" required placeholder="75040">
-                </div>
-                
-                <div class="form-group full-width">
-                    <label>Notes (Optional)</label>
-                    <input type="text" name="notes" placeholder="Specific strain requests, delivery instructions, etc.">
-                </div>
-                
-                <div class="form-group full-width" style="text-align: center; margin-top: 1rem;">
-                    <button type="submit" class="btn" style="font-size: 2rem; padding: 1.5rem 4rem;">SEND ORDER</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-logo">THANG</div>
-        <div class="footer-text">
-            Dallas, Texas • orders@kratomthang.com • Telegram: @kratomthang<br>
-            Wholesale • Retail • Same Day DFW • HTS: 1211.90.8090
-        </div>
-        <div class="disclaimer">
-            Must be 21+. Products sold for research & collection only. Not for human consumption.<br>
-            These statements have not been evaluated by the FDA. Not intended to diagnose, treat, cure, or prevent any disease.
-        </div>
+        <div class="footer-brand">THANG</div>
+        <p style="color: #666; margin-bottom: 1rem;">Garland, TX • orders@kratomthang.com • Telegram: @kratomthang</p>
+        <p class="disclaimer">Must be 21+. For research & collection only. Not for human consumption.</p>
     </footer>
-
-    <div id="toast">ORDER SENT! CHECK TELEGRAM.</div>
-
-    <script>
-        function verifyAge(allowed) {
-            if (allowed) {
-                localStorage.setItem('ageVerified', 'true');
-                document.getElementById('age-gate').classList.add('hidden');
-            } else {
-                window.location.href = 'https://www.google.com';
-            }
-        }
-        
-        if (localStorage.getItem('ageVerified')) {
-            document.getElementById('age-gate').classList.add('hidden');
-        }
-        
-        document.getElementById('orderForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            document.getElementById('toast').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('toast').style.display = 'none';
-            }, 3000);
-            e.target.reset();
-        });
-    </script>
 </body>
 </html>
