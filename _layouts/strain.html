@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.name }} | THANG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/ethereal.css">
+</head>
+<body style="padding-top: 120px;">
+  <div class="ethereal-bg"></div>
+  <div class="orb orb-1"></div>
+  
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="logo">THANG</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#collection">Collection</a></li>
+        <li><a href="/order.html">Order</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
+    <div class="glass" style="padding: 4rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div class="strain-visual" style="height: 400px; border-radius: 16px;">
+          <span style="font-size: 6rem;">🌿</span>
+        </div>
+        <div>
+          <div class="strain-vein {% if page.type contains 'Red' %}vein-red{% elsif page.type contains 'White' %}vein-white{% elsif page.type contains 'Gold' %}vein-gold{% else %}vein-green{% endif %}">
+            {{ page.type }} | {{ page.origin }}
+          </div>
+          <h1 class="holo-text" style="font-size: 3rem; margin-bottom: 1rem;">{{ page.name }}</h1>
+          <p style="color: rgba(255,255,255,0.6); font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.6;">
+            {{ content }}
+          </p>
+          <div style="margin: 2rem 0;">
+            <p style="color: var(--gold); margin-bottom: 0.5rem;">Effects: {{ page.effects }}</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;">
+            <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; text-align: center;">
+              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Wholesale</div>
+              <div style="font-size: 1.5rem; color: var(--gold);">${{ page.price_wholesale }}/kg</div>
+            </div>
+            <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; text-align: center;">
+              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Retail</div>
+              <div style="font-size: 1.5rem; color: white;">${{ page.price_retail }}/kg</div>
+            </div>
+          </div>
+          <a href="/order.html?strain={{ page.name | url_encode }}" class="btn-liquid" style="display: block; text-align: center; margin-top: 2rem; border-radius: 12px;">
+            Order {{ page.name }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
