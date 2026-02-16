@@ -3,10 +3,217 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Strains | THANG Botanicals</title>
+  <title>Catalog | THANG Botanicals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/mylar.css">
+  <style>
+    /* Thai-inspired Hip-Hop Font for THANG */
+    .thang-logo {
+      font-family: 'Chakra Petch', sans-serif !important;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffd700 0%, #ff006e 50%, #8338ec 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .thang-logo::after {
+      content: 'THANG';
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      background: linear-gradient(135deg, rgba(255,0,110,0.3), rgba(131,56,236,0.3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: -1;
+      filter: blur(4px);
+    }
+
+    /* Sorting Controls */
+    .sort-controls {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .sort-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .sort-btn:hover, .sort-btn.active {
+      background: linear-gradient(135deg, rgba(255,0,110,0.3), rgba(131,56,236,0.3));
+      border-color: #ff006e;
+      box-shadow: 0 0 20px rgba(255,0,110,0.4);
+    }
+
+    /* Hidden sections for sorting */
+    .strain-section {
+      display: none;
+    }
+    .strain-section.active {
+      display: block;
+    }
+
+    /* Hype Effects */
+    .hype-banner {
+      background: linear-gradient(90deg, transparent, rgba(255,0,110,0.1), transparent);
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255,0,110,0.3);
+      border-bottom: 1px solid rgba(255,0,110,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hype-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: scan 3s infinite;
+    }
+    
+    @keyframes scan {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    .glitch-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .glitch-text::before {
+      left: 2px;
+      text-shadow: -2px 0 #ff006e;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+    
+    .glitch-text::after {
+      left: -2px;
+      text-shadow: -2px 0 #8338ec;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim2 5s infinite linear alternate-reverse;
+    }
+    
+    @keyframes glitch-anim {
+      0% { clip: rect(30px, 9999px, 10px, 0); }
+      20% { clip: rect(80px, 9999px, 90px, 0); }
+      40% { clip: rect(10px, 9999px, 50px, 0); }
+      60% { clip: rect(60px, 9999px, 20px, 0); }
+      80% { clip: rect(40px, 9999px, 70px, 0); }
+      100% { clip: rect(20px, 9999px, 60px, 0); }
+    }
+    
+    @keyframes glitch-anim2 {
+      0% { clip: rect(60px, 9999px, 30px, 0); }
+      20% { clip: rect(20px, 9999px, 80px, 0); }
+      40% { clip: rect(90px, 9999px, 10px, 0); }
+      60% { clip: rect(30px, 9999px, 60px, 0); }
+      80% { clip: rect(70px, 9999px, 40px, 0); }
+      100% { clip: rect(50px, 9999px, 20px, 0); }
+    }
+
+    /* Variety View Styles */
+    .variety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .variety-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    
+    .variety-card h3 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #ffbe0b;
+    }
+    
+    .strain-list-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .strain-pill {
+      background: rgba(0,0,0,0.4);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Preorder Badge */
+    .preorder-badge {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #ff006e, #8338ec);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(255,0,110,0.4);
+      z-index: 1000;
+      animation: pulse 2s infinite;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
 </head>
 <body>
   <div class="chrome-bg"></div>
@@ -14,7 +221,7 @@
 
   <nav class="mylar-nav">
     <div class="nav-container">
-      <a href="/" class="chrome-logo">THANG</a>
+      <a href="/" class="chrome-logo thang-logo">THANG</a>
       <ul class="nav-links">
         <li><a href="/strains.html">CATALOG</a></li>
         <li><a href="/order.html">ORDER</a></li>
@@ -22,89 +229,259 @@
     </div>
   </nav>
 
-  <section class="catalog-hero" style="padding-top: 120px;">
-    <h1 class="chrome-text">COMPLETE CATALOG</h1>
-    <p class="sub-text">50+ PREMIUM VARIETIES • DIRECT FROM INDONESIA</p>
+  <section class="catalog-hero" style="padding-top: 140px;">
+    <div class="hype-banner">
+      <div class="glitch-text" data-text="LIMITED BATCHES // DIRECT TRADE">LIMITED BATCHES // DIRECT TRADE</div>
+      <p class="sub-text" style="margin-top: 1rem;">HTS CODE 1211.90.8090 // CUSTOMS CLEARED</p>
+    </div>
+    
+    <h1 class="chrome-text" style="font-size: 3rem;">THE COLLECTION</h1>
+    <p class="sub-text">50+ PREMIUM VARIETIES // FAMILY FARMS // LAB TESTED</p>
   </section>
 
-  <section class="catalog-section">
+  <!-- Sorting Controls -->
+  <div class="sort-controls">
+    <button class="sort-btn active" onclick="showView('color')">BY COLOR</button>
+    <button class="sort-btn" onclick="showView('variety')">BY VARIETY</button>
+    <button class="sort-btn" onclick="showView('effects')">BY EFFECTS</button>
+  </div>
+
+  <!-- COLOR VIEW (Default) -->
+  <div id="color-view" class="strain-section active">
     
-    <!-- GREEN VEINS -->
+    <!-- GREENS -->
     <div class="category-header">
       <span class="chrome-text green">GREEN</span>
       <div class="rainbow-line green"></div>
     </div>
     <div class="compact-grid">
-      <a href="/strains/green-maeng-da/" class="compact-card green"><span class="name">Maeng Da</span><span class="price">$125</span></a>
-      <a href="/strains/super-green/" class="compact-card green"><span class="name">Super Green</span><span class="price">$130</span></a>
-      <a href="/strains/green-horn/" class="compact-card green"><span class="name">Horn</span><span class="price">$125</span></a>
-      <a href="/strains/green-bali/" class="compact-card green"><span class="name">Bali</span><span class="price">$125</span></a>
-      <a href="/strains/green-borneo/" class="compact-card green"><span class="name">Borneo</span><span class="price">$125</span></a>
-      <a href="/strains/green-thai/" class="compact-card green"><span class="name">Thai</span><span class="price">$125</span></a>
-      <a href="/strains/green-malay/" class="compact-card green"><span class="name">Malay</span><span class="price">$125</span></a>
-      <a href="/strains/green-elephant/" class="compact-card green"><span class="name">Elephant</span><span class="price">$130</span></a>
-      <a href="/strains/green-dragon/" class="compact-card green"><span class="name">Dragon</span><span class="price">$130</span></a>
-      <a href="/strains/green-hulu/" class="compact-card green"><span class="name">Hulu Kapuas</span><span class="price">$130</span></a>
-      <a href="/strains/green-ketapang/" class="compact-card green"><span class="name">Ketapang</span><span class="price">$125</span></a>
-      <a href="/strains/green-sumatra/" class="compact-card green"><span class="name">Sumatra</span><span class="price">$125</span></a>
+      <a href="/strains/green-maeng-da/" class="compact-card green"><span class="name">Maeng Da</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/super-green/" class="compact-card green"><span class="name">Super Green</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/green-horn/" class="compact-card green"><span class="name">Horn</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/green-bali/" class="compact-card green"><span class="name">Bali</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/green-borneo/" class="compact-card green"><span class="name">Borneo</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/green-thai/" class="compact-card green"><span class="name">Thai</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/green-malay/" class="compact-card green"><span class="name">Malay</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/green-elephant/" class="compact-card green"><span class="name">Elephant</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/green-dragon/" class="compact-card green"><span class="name">Dragon</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/green-hulu/" class="compact-card green"><span class="name">Hulu Kapuas</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/green-ketapang/" class="compact-card green"><span class="name">Ketapang</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/green-sumatra/" class="compact-card green"><span class="name">Sumatra</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/aceh-green/" class="compact-card green"><span class="name">Aceh</span><span class="price retail-only">$280</span></a>
+      <a href="/strains/zombie-green/" class="compact-card green"><span class="name">Zombie</span><span class="price retail-only">$300</span></a>
     </div>
 
-    <!-- RED VEINS -->
+    <!-- REDS -->
     <div class="category-header">
       <span class="chrome-text red">RED</span>
       <div class="rainbow-line red"></div>
     </div>
     <div class="compact-grid">
-      <a href="/strains/red-bali/" class="compact-card red"><span class="name">Bali</span><span class="price">$125</span></a>
-      <a href="/strains/red-horn/" class="compact-card red"><span class="name">Horn</span><span class="price">$125</span></a>
-      <a href="/strains/red-thai/" class="compact-card red"><span class="name">Thai</span><span class="price">$125</span></a>
-      <a href="/strains/red-borneo/" class="compact-card red"><span class="name">Borneo</span><span class="price">$125</span></a>
-      <a href="/strains/red-maeng-da/" class="compact-card red"><span class="name">Maeng Da</span><span class="price">$135</span></a>
-      <a href="/strains/red-bentuangie/" class="compact-card red"><span class="name">Bentuangie</span><span class="price">$130</span></a>
-      <a href="/strains/red-dragon/" class="compact-card red"><span class="name">Dragon</span><span class="price">$130</span></a>
-      <a href="/strains/red-elephant/" class="compact-card red"><span class="name">Elephant</span><span class="price">$130</span></a>
-      <a href="/strains/red-vietnam/" class="compact-card red"><span class="name">Vietnam</span><span class="price">$125</span></a>
-      <a href="/strains/red-hulu/" class="compact-card red"><span class="name">Hulu Kapuas</span><span class="price">$130</span></a>
-      <a href="/strains/red-ketapang/" class="compact-card red"><span class="name">Ketapang</span><span class="price">$125</span></a>
-      <a href="/strains/red-sumatra/" class="compact-card red"><span class="name">Sumatra</span><span class="price">$125</span></a>
+      <a href="/strains/red-bali/" class="compact-card red"><span class="name">Bali</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/red-horn/" class="compact-card red"><span class="name">Horn</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/red-thai/" class="compact-card red"><span class="name">Thai</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/red-borneo/" class="compact-card red"><span class="name">Borneo</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/red-maeng-da/" class="compact-card red"><span class="name">Maeng Da</span><span class="price retail-only">$260</span></a>
+      <a href="/strains/red-bentuangie/" class="compact-card red"><span class="name">Bentuangie</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/red-dragon/" class="compact-card red"><span class="name">Dragon</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/red-elephant/" class="compact-card red"><span class="name">Elephant</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/red-vietnam/" class="compact-card red"><span class="name">Vietnam</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/red-hulu/" class="compact-card red"><span class="name">Hulu Kapuas</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/red-ketapang/" class="compact-card red"><span class="name">Ketapang</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/red-sumatra/" class="compact-card red"><span class="name">Sumatra</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/aceh-red/" class="compact-card red"><span class="name">Aceh</span><span class="price retail-only">$280</span></a>
+      <a href="/strains/zombie-red/" class="compact-card red"><span class="name">Zombie</span><span class="price retail-only">$300</span></a>
     </div>
 
-    <!-- WHITE VEINS -->
+    <!-- WHITES -->
     <div class="category-header">
       <span class="chrome-text white">WHITE</span>
       <div class="rainbow-line white"></div>
     </div>
     <div class="compact-grid">
-      <a href="/strains/white-borneo/" class="compact-card white"><span class="name">Borneo</span><span class="price">$125</span></a>
-      <a href="/strains/white-horn/" class="compact-card white"><span class="name">Horn</span><span class="price">$125</span></a>
-      <a href="/strains/white-thai/" class="compact-card white"><span class="name">Thai</span><span class="price">$125</span></a>
-      <a href="/strains/white-bali/" class="compact-card white"><span class="name">Bali</span><span class="price">$125</span></a>
-      <a href="/strains/white-maeng-da/" class="compact-card white"><span class="name">Maeng Da</span><span class="price">$135</span></a>
-      <a href="/strains/white-elephant/" class="compact-card white"><span class="name">Elephant</span><span class="price">$130</span></a>
-      <a href="/strains/white-vietnam/" class="compact-card white"><span class="name">Vietnam</span><span class="price">$125</span></a>
-      <a href="/strains/white-hulu/" class="compact-card white"><span class="name">Hulu Kapuas</span><span class="price">$130</span></a>
-      <a href="/strains/white-sumatra/" class="compact-card white"><span class="name">Sumatra</span><span class="price">$125</span></a>
-      <a href="/strains/white-ketapang/" class="compact-card white"><span class="name">Ketapang</span><span class="price">$125</span></a>
+      <a href="/strains/white-borneo/" class="compact-card white"><span class="name">Borneo</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/white-horn/" class="compact-card white"><span class="name">Horn</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/white-thai/" class="compact-card white"><span class="name">Thai</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/white-bali/" class="compact-card white"><span class="name">Bali</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/white-maeng-da/" class="compact-card white"><span class="name">Maeng Da</span><span class="price retail-only">$260</span></a>
+      <a href="/strains/white-elephant/" class="compact-card white"><span class="name">Elephant</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/white-vietnam/" class="compact-card white"><span class="name">Vietnam</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/white-hulu/" class="compact-card white"><span class="name">Hulu Kapuas</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/white-sumatra/" class="compact-card white"><span class="name">Sumatra</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/white-ketapang/" class="compact-card white"><span class="name">Ketapang</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/aceh-white/" class="compact-card white"><span class="name">Aceh</span><span class="price retail-only">$280</span></a>
+      <a href="/strains/zombie-white/" class="compact-card white"><span class="name">Zombie</span><span class="price retail-only">$300</span></a>
     </div>
 
-    <!-- YELLOW -->
-  <div class="category-header">
-  <span class="chrome-text gold">YELLOW</span>
-  <div class="rainbow-line gold"></div>
-</div>
-<div class="compact-grid">
-  <a href="/strains/yellow-bali/" class="compact-card gold"><span class="name">Yellow Bali</span><span class="price">$125</span></a>
-  <a href="/strains/yellow-vietnam/" class="compact-card gold"><span class="name">Yellow Vietnam</span><span class="price">$125</span></a>
-  <a href="/strains/yellow-sumatra/" class="compact-card gold"><span class="name">Yellow Sumatra</span><span class="price">$125</span></a>
-  <a href="/strains/gold-thai/" class="compact-card gold"><span class="name">Thai Reserve</span><span class="price">$140</span></a>
-  <!-- Delete other gold strains or rename to yellow-* -->
-</div>
+    <!-- YELLOWS -->
+    <div class="category-header">
+      <span class="chrome-text gold">YELLOW</span>
+      <div class="rainbow-line gold"></div>
+    </div>
+    <div class="compact-grid">
+      <a href="/strains/yellow-bali/" class="compact-card gold"><span class="name">Bali</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/yellow-vietnam/" class="compact-card gold"><span class="name">Vietnam</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/yellow-sumatra/" class="compact-card gold"><span class="name">Sumatra</span><span class="price retail-only">$240</span></a>
+      <a href="/strains/yellow-hulu/" class="compact-card gold"><span class="name">Hulu Kapuas</span><span class="price retail-only">$250</span></a>
+      <a href="/strains/gold-thai/" class="compact-card gold"><span class="name">Thai Reserve</span><span class="price retail-only">$280</span></a>
+      <a href="/strains/gold-borneo/" class="compact-card gold"><span class="name">Borneo</span><span class="price retail-only">$270</span></a>
+      <a href="/strains/gold-elephant/" class="compact-card gold"><span class="name">Elephant</span><span class="price retail-only">$280</span></a>
+      <a href="/strains/aceh-yellow/" class="compact-card gold"><span class="name">Aceh</span><span class="price retail-only">$280</span></a>
+      <a href="/strains/zombie-yellow/" class="compact-card gold"><span class="name">Zombie</span><span class="price retail-only">$300</span></a>
+    </div>
+  </div>
 
-  </section>
+  <!-- VARIETY VIEW -->
+  <div id="variety-view" class="strain-section">
+    <div class="variety-grid">
+      <div class="variety-card">
+        <h3>🐉 DRAGON BLENDS</h3>
+        <p>Premium mixed varieties for balanced effects</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">Green Dragon</span>
+          <span class="strain-pill">Red Dragon</span>
+        </div>
+      </div>
+      
+      <div class="variety-card">
+        <h3>🐘 ELEPHANT</h3>
+        <p>Large mature leaves, potent and long-lasting</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">Green Elephant</span>
+          <span class="strain-pill">Red Elephant</span>
+          <span class="strain-pill">White Elephant</span>
+          <span class="strain-pill">Gold Elephant</span>
+        </div>
+      </div>
+      
+      <div class="variety-card">
+        <h3>🧟 ZOMBIE</h3>
+        <p>Ultra-potent fermented specialty batches</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">Zombie Green</span>
+          <span class="strain-pill">Zombie Red</span>
+          <span class="strain-pill">Zombie White</span>
+          <span class="strain-pill">Zombie Yellow</span>
+        </div>
+      </div>
+      
+      <div class="variety-card">
+        <h3>🏝️ ACEH REGIONAL</h3>
+        <p>Rare strains from Northern Sumatra</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">Aceh Green</span>
+          <span class="strain-pill">Aceh Red</span>
+          <span class="strain-pill">Aceh White</span>
+          <span class="strain-pill">Aceh Yellow</span>
+        </div>
+      </div>
+      
+      <div class="variety-card">
+        <h3>👑 MAENG DA</h3>
+        <p>Premium grade, most popular variety</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">Green Maeng Da</span>
+          <span class="strain-pill">Red Maeng Da</span>
+          <span class="strain-pill">White Maeng Da</span>
+        </div>
+      </div>
+      
+      <div class="variety-card">
+        <h3>🌿 BALI</h3>
+        <p>Smooth, consistent, classic choice</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">Green Bali</span>
+          <span class="strain-pill">Red Bali</span>
+          <span class="strain-pill">White Bali</span>
+          <span class="strain-pill">Yellow Bali</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EFFECTS VIEW -->
+  <div id="effects-view" class="strain-section">
+    <div class="variety-grid">
+      <div class="variety-card" style="border-color: #06ffa5;">
+        <h3 style="color: #06ffa5;">⚡ ENERGY & FOCUS</h3>
+        <p>Daytime strains for productivity</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">White Maeng Da</span>
+          <span class="strain-pill">Green Thai</span>
+          <span class="strain-pill">White Borneo</span>
+          <span class="strain-pill">Zombie White</span>
+        </div>
+      </div>
+      
+      <div class="variety-card" style="border-color: #ff006e;">
+        <h3 style="color: #ff006e;">😴 RELAX & UNWIND</h3>
+        <p>Evening strains for chill mode</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">Red Bali</span>
+          <span class="strain-pill">Red Borneo</span>
+          <span class="strain-pill">Red Sumatra</span>
+          <span class="strain-pill">Zombie Red</span>
+        </div>
+      </div>
+      
+      <div class="variety-card" style="border-color: #ffbe0b;">
+        <h3 style="color: #ffbe0b;">⚖️ BALANCED</h3>
+        <p>Best of both worlds</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">Green Maeng Da</span>
+          <span class="strain-pill">Super Green</span>
+          <span class="strain-pill">Yellow Vietnam</span>
+          <span class="strain-pill">Aceh Green</span>
+        </div>
+      </div>
+      
+      <div class="variety-card" style="border-color: #8338ec;">
+        <h3 style="color: #8338ec;">🔥 RARE & EXOTIC</h3>
+        <p>Limited small batches</p>
+        <div class="strain-list-mini">
+          <span class="strain-pill">All Aceh</span>
+          <span class="strain-pill">All Zombie</span>
+          <span class="strain-pill">Hulu Kapuas</span>
+          <span class="strain-pill">Bentuangie</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wholesale Banner -->
+  <div style="max-width: 800px; margin: 4rem auto; padding: 0 2rem;">
+    <div class="wholesale-banner" style="background: linear-gradient(135deg, rgba(255,0,110,0.1), rgba(131,56,236,0.1)); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 2rem; text-align: center;">
+      <h3 style="font-family: 'Orbitron'; color: #ffbe0b; margin-bottom: 0.5rem; font-size: 1.5rem;">BULK ORDERS & WHOLESALE</h3>
+      <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 1.1rem;">5kg+ | Headshops | Distributors | Custom Packaging</p>
+      <a href="mailto:info@kratomthang.com?subject=WHOLESALE INQUIRY" class="mylar-btn primary" style="font-size: 0.9rem;">CONTACT FOR WHOLESALE PRICING</a>
+    </div>
+  </div>
 
   <footer class="chrome-footer">
     <a href="/order.html" class="mylar-btn primary large">PLACE ORDER</a>
     <p style="margin-top: 2rem; opacity: 0.6;">50+ STRAINS • WHOLESALE • RETAIL • DALLAS</p>
+    <p class="disclaimer">21+ ONLY • RESEARCH PURPOSES • NOT FOR HUMAN CONSUMPTION</p>
   </footer>
+
+  <!-- Preorder Floating Button -->
+  <a href="/order.html" class="preorder-badge">🔥 PREORDER NOW</a>
+
+  <script>
+    function showView(view) {
+      // Hide all sections
+      document.querySelectorAll('.strain-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Show selected
+      document.getElementById(view + '-view').classList.add('active');
+      
+      // Update buttons
+      document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
