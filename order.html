@@ -153,36 +153,17 @@
           <label>Select Strain</label>
           <select name="strain" id="strainSelect" required>
             <option value="">Choose strain...</option>
-            <optgroup label="Green Veins">
-              <option value="Green Maeng Da">Green Maeng Da</option>
-              <option value="Super Green">Super Green</option>
-              <option value="Green Bali">Green Bali</option>
-              <option value="Green Borneo">Green Borneo</option>
-              <option value="Green Thai">Green Thai</option>
-              <option value="Green Malay">Green Malay</option>
-              <option value="Green Elephant">Green Elephant</option>
+            <optgroup label="Green"
               <option value="Green Dragon">Green Dragon</option>
             </optgroup>
-            <optgroup label="Red Veins">
-              <option value="Red Bali">Red Bali</option>
-              <option value="Red Maeng Da">Red Maeng Da</option>
-              <option value="Red Borneo">Red Borneo</option>
+            <optgroup label="Red"> 
               <option value="Red Thai">Red Thai</option>
-              <option value="Red Horn">Red Horn</option>
-              <option value="Red Elephant">Red Elephant</option>
             </optgroup>
-            <optgroup label="White Veins">
-              <option value="White Borneo">White Borneo</option>
-              <option value="White Maeng Da">White Maeng Da</option>
-              <option value="White Thai">White Thai</option>
-              <option value="White Bali">White Bali</option>
-              <option value="White Elephant">White Elephant</option>
+            <optgroup label="White">
+              <option value="White Horn">White Horn</option>
             </optgroup>
-            <optgroup label="Gold & Yellow">
-              <option value="Gold Thai">Gold Thai Reserve</option>
-              <option value="Gold Borneo">Gold Borneo</option>
-              <option value="Yellow Bali">Yellow Bali</option>
-              <option value="Yellow Vietnam">Yellow Vietnam</option>
+            <optgroup label="Yellow">
+              <option value="Yellow Maeng Da">Yellow Maeng Da</option>
             </optgroup>
           </select>
         </div>
@@ -190,11 +171,11 @@
         <div class="form-group">
           <label>Quantity</label>
           <select name="quantity" id="quantitySelect" required>
-            <option value="1 oz">1 oz - $11 ($8 wholesale)</option>
-            <option value="4 oz">4 oz - $35 ($20 wholesale)</option>
-            <option value="8 oz">8 oz - $65 ($35 wholesale)</option>
-            <option value="16 oz">16 oz - $125 ($65 wholesale)</option>
-            <option value="1 kg" selected>1 kg - $240 ($125 wholesale)</option>
+            <option value="1 oz">1 oz - $11 </option>
+            <option value="4 oz">4 oz - $35 </option>
+            <option value="8 oz">8 oz - $65 </option>
+            <option value="16 oz">16 oz - $125 </option>
+            <option value="1 kg" selected>1 kg - $240 </option>
             <option value="5 kg">5 kg - Contact for pricing</option>
           </select>
         </div>
@@ -271,13 +252,10 @@
     const prices = {
       '1 oz': 11, '4 oz': 35, '8 oz': 65, '16 oz': 125, '1 kg': 240, '5 kg': 0
     };
-    const wholesalePrices = {
-      '1 oz': 8, '4 oz': 20, '8 oz': 35, '16 oz': 65, '1 kg': 125, '5 kg': 0
-    };
     
     document.getElementById('quantitySelect').addEventListener('change', function() {
       const qty = this.value;
-      document.getElementById('totalPrice').textContent = '$' + wholesalePrices[qty];
+      document.getElementById('totalPrice').textContent = '$' + [qty];
     });
 
     // Form submission
