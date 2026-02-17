@@ -1,0 +1,96 @@
+---
+layout: default
+title: "Coming to Dallas March 2025 | THANG "
+---
+
+<style>
+  .coming-soon {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: #050505;
+  }
+  .logo { font-family: Orbitron; font-size: 4rem; color: #FFD700; margin-bottom: 1rem; }
+  .countdown { font-size: 2rem; color: #ff006e; margin: 2rem 0; font-family: Orbitron; }
+  .email-capture { max-width: 500px; width: 100%; margin-top: 2rem; }
+  input[type="email"] {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    border: none;
+    color: #fff;
+    font-family: Orbitron;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+</style>
+
+<div class="coming-soon">
+  <div class="logo">THANG</div>
+  <h1 style="color: #fff; margin-bottom: 1rem;">First Harvest: March 2025</h1>
+  <p style="color: rgba(255,255,255,0.6); max-width: 500px; margin-bottom: 2rem;">
+    115kg of high quality, organic, direct-trade kratom. 25 strains. 
+    No brokers. No exploitation.
+  </p>
+  
+  <div class="countdown" id="countdown">115 Days</div>
+  
+  <div class="email-capture">
+    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1rem;">
+      Get 48-hour early access + 10% off first order
+    </p>
+    <form id="earlyAccess">
+      <input type="email" placeholder="your@email.com" required id="emailInput">
+      <input type="hidden" id="strainInterest" value="any"> <!-- Updated by quiz later -->
+      <button type="submit">Reserve My Spot</button>
+    </form>
+    <p id="successMsg" style="color: #06ffa5; margin-top: 1rem; display: none;">
+      ✓ You're on the list. Early access opens Feb 15.
+    </p>
+  </div>
+</div>
+
+<script>
+  // Simple countdown to March 1, 2025
+  const target = new Date('2025-03-01').getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const days = Math.floor((target - now) / (1000 * 60 * 60 * 24));
+    document.getElementById('countdown').textContent = days > 0 ? days + ' Days' : 'Shipping Now';
+  }, 1000);
+
+  // Form submission to n8n
+  document.getElementById('earlyAccess').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('emailInput').value;
+    
+    await fetch('https://YOUR-N8N-URL/webhook/early-access', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: email,
+        strain_preference: document.getElementById('strainInterest').value,
+        timestamp: new Date().toISOString(),
+        source: 'coming_soon_page'
+      })
+    });
+    
+    document.getElementById('earlyAccess').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    localStorage.setItem('thang_early_access', 'subscribed');
+  });
+</script>
